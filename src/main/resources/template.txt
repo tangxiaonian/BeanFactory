@@ -1,0 +1,21 @@
+package com.tang.Bean;
+
+/**
+ * @author tang
+ * @create {Date}
+ */
+public class {className} {
+
+    private {fieldType} {fieldName};
+    private {fieldType}  {fieldName};
+    //    表结构
+    private {fieldType} {fieldName};
+
+    public String get{fieldName}() {
+        return {fieldName};
+    }
+
+    public void set{fieldName}(String {fieldName}) {
+        {fieldName} = {fieldName};
+    }
+}
