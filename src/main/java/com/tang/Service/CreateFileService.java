@@ -22,6 +22,7 @@ import java.util.Map;
 public class CreateFileService {
 
     private String fileSavePath = FileUtils.getFilePath();
+    private String packageName = FileUtils.getPackageName();
     private DatabasesService databasesService = new DatabasesService();
 
 
@@ -98,6 +99,8 @@ public class CreateFileService {
         for (String tableName : tableMap.keySet()) {
 //          创建保存生成文件的info对象
             ClassBean classBean = new ClassBean();
+
+            classBean.setPackageName(packageName);
 
             classBean.setClassName(tableName);
 //          根据表名取出表对象

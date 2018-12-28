@@ -16,10 +16,19 @@ public class ClassBean {
     private String getMethod;
     private String setMethod;
     private String bottomBody;
+    private String packageName;
+
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
 
     public String getTopBody() {
         String format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        this.topBody = "package com.tang.Bean;\n" +
+        this.topBody = "package "+this.packageName+";\n" +
                 "\n" +
                 "/**\n" +
                 " * @author Tang\n" +

@@ -20,6 +20,7 @@ public class FileUtils {
 
     public static String fileSavePath = null;
     private static final String joinPath = "src\\main\\java\\com\\tang\\ResultBean";
+    private static String packageName = "com.tang.ResultBean";
 
     static {
 
@@ -32,6 +33,15 @@ public class FileUtils {
             properties.load(inputStream);
 
             fileSavePath = properties.getProperty("fileSavePath");
+            packageName = properties.getProperty("packageName");
+
+            if (packageName == null){
+                packageName = "com.tang.ResultBean";
+            }else {
+                if (packageName.trim().length() == 0){
+                    packageName = "com.tang.ResultBean";
+                }
+            }
 
 //            没有指定目录 就指定默认保存目录
             if (fileSavePath != null && fileSavePath.trim().length() != 0){
@@ -65,6 +75,10 @@ public class FileUtils {
             e.printStackTrace();
         }
 
+    }
+
+    public static String getPackageName() {
+        return packageName;
     }
 
     public static String getFilePath(){
